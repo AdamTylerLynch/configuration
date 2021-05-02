@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 Add any new changes to the top (right below this line).
 
+ - 2021-05-08
+    - Split ``manage_edxapp_users_and_groups.yml`` playbook into ``manage_edxapp_users.yml``
+      and ``manage_edxapp_groups.yml``, the former of which is always run in an LMS
+      context, and the latter of which accepts a ``service_variant`` variable to
+      specify LMS or CMS. This addresses a long-standing in which edxapp permissions
+      could only be programmatically managed for LMS-installed apps.
+    - ``manage_edxapp_users_and_groups.yml`` still exists, but will be removed once split
+      user/group management is confirmed to be working.
+
  - 2021-03-08
     - Remove instruction from ansile-bootstrap.sh that instructed people to activate
       the virtualenv.  This was incorrect for community installations.
