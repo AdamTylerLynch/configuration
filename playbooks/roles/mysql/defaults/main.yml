@@ -26,4 +26,5 @@ DEFAULT_MYSQL_COLLATION: utf8_general_ci
 
 MYSQL_APT_KEYSERVER: "keyserver.ubuntu.com"
 MYSQL_APT_KEY: "8C718D3B5072E1F5"
+#Using the Ubuntu mirrors provides access to the latest security updates, and packages for non-x86 architectures.
 MYSQL_REPO: "deb http://ports.ubuntu.com/ubuntu-ports bionic-updates main"
