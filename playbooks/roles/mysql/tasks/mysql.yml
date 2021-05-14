@@ -67,6 +67,13 @@
     state: present
   when: ansible_distribution_release == 'focal'
 
+- name: add the mysql ports repo to the sources list
+  apt_repository:
+    repo: "{{ MYSQL_REPO_PORTS }}"
+    state: present
+  when: ansible_distribution_release == 'focal'
+
+
 # Installing mysql-5.7-client, mysql-5.7-community-server
 # and mysql-5.7-server in separate tasks to resolve dependencies
 - name: install mysql-5.7-client
